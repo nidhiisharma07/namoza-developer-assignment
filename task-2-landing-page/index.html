@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book expert orthopaedic care with OrthoNow. Same-day consultations across Bengaluru, Hyderabad and Chennai. 25+ specialists, 9 clinics.">
+  <title>OrthoNow Healthcare | Expert Orthopaedic Care</title>
+  <style>
+    :root {
+      --primary: #0A5EB0;
+      --primary-dark: #084a8f;
+      --primary-light: #e8f2fc;
+      --accent: #16A34A;
+      --accent-dark: #15803d;
+      --accent-light: #ecfdf3;
+      --bg: #F6F9FC;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(10, 94, 176, 0.08);
+      --shadow-md: 0 8px 24px rgba(10, 94, 176, 0.12);
+      --shadow-lg: 0 16px 48px rgba(10, 94, 176, 0.14);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1200px, 100% - 2rem);
+      margin-inline: auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    /* ===================== NAVIGATION ===================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(10, 94, 176, 0.08);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .navbar__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+    }
+
+    .navbar__logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), #1d7fd4);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 1.1rem;
+    }
+
+    .navbar__menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .navbar__menu a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    .navbar__menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: width var(--transition);
+    }
+
+    .navbar__menu a:hover,
+    .navbar__menu a:focus-visible {
+      color: var(--primary);
+    }
+
+    .navbar__menu a:hover::after,
+    .navbar__menu a:focus-visible::after {
+      width: 100%;
+    }
+
+    .navbar__actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.35rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn--primary {
+      background: linear-gradient(135deg, var(--primary), #1a73c9);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(10, 94, 176, 0.35);
+    }
+
+    .btn--primary:hover,
+    .btn--primary:focus-visible {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      box-shadow: 0 6px 20px rgba(10, 94, 176, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .btn--outline {
+      background: var(--white);
+      color: var(--primary);
+      border: 2px solid rgba(10, 94, 176, 0.2);
+    }
+
+    .btn--outline:hover,
+    .btn--outline:focus-visible {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .btn--accent {
+      background: linear-gradient(135deg, var(--accent), #22c55e);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
+    }
+
+    .btn--accent:hover,
+    .btn--accent:focus-visible {
+      background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+      transform: translateY(-1px);
+    }
+
+    .btn--ghost {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn--ghost:hover,
+    .btn--ghost:focus-visible {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .btn--whatsapp {
+      background: #25d366;
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    }
+
+    .btn--whatsapp:hover,
+    .btn--whatsapp:focus-visible {
+      background: #1ebe57;
+      transform: translateY(-1px);
+    }
+
+    .navbar__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.35rem;
+    }
+
+    .navbar__toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      position: relative;
+      padding: 3.5rem 0 5rem;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 20%, rgba(10, 94, 176, 0.12), transparent),
+        radial-gradient(ellipse 60% 50% at 90% 80%, rgba(22, 163, 74, 0.08), transparent),
+        linear-gradient(180deg, #eef5fc 0%, var(--bg) 100%);
+      z-index: -1;
+    }
+
+    .hero__grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero__content {
+      flex: 1 1 420px;
+      min-width: 0;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .hero__badge .stars {
+      color: #f59e0b;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .hero__badge .divider {
+      color: var(--text-muted);
+      opacity: 0.4;
+    }
+
+    .hero__title {
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero__title span {
+      background: linear-gradient(135deg, var(--primary), #1d7fd4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero__subtitle {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero__benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem 1.5rem;
+      margin-bottom: 2rem;
+      list-style: none;
+    }
+
+    .hero__benefits li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .hero__benefits .check {
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .hero__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* ===================== FORM CARD ===================== */
+    .hero__form-wrapper {
+      flex: 1 1 380px;
+      min-width: 0;
+    }
+
+    .form-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-card__header {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-card__header h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-card__header p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--text);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(10, 94, 176, 0.15);
+    }
+
+    .form-group input.error,
+    .form-group select.error {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+    }
+
+    .form-error {
+      display: none;
+      font-size: 0.78rem;
+      color: #ef4444;
+      margin-top: 0.35rem;
+    }
+
+    .form-error.visible {
+      display: block;
+    }
+
+    .form-card__submit {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .form-card__secure {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.85rem;
+      background: var(--accent-light);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      color: #166534;
+      line-height: 1.5;
+    }
+
+    .success-card {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: linear-gradient(135deg, #ecfdf3, #d1fae5);
+      border: 1px solid rgba(22, 163, 74, 0.25);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .success-card.visible {
+      display: block;
+      animation: fadeUp 0.5s ease;
+    }
+
+    .success-card__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1rem;
+      background: var(--accent);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 1.75rem;
+    }
+
+    .success-card h2 {
+      font-size: 1.75rem;
+      color: var(--accent-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .success-card p {
+      color: #166534;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-card .booking-id {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.25rem;
+      background: var(--white);
+      border-radius: 999px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.05em;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===================== STATISTICS ===================== */
+    .stats {
+      padding: 4rem 0;
+    }
+
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(10, 94, 176, 0.06);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-card__number {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), #1d7fd4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-card__label {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ===================== WHY CHOOSE ===================== */
+    .why {
+      padding: 5rem 0;
+      background: linear-gradient(180deg, var(--bg) 0%, #eef4fa 50%, var(--bg) 100%);
+    }
+
+    .why__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(10, 94, 176, 0.06);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feature-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.5rem;
+    }
+
+    .feature-card__icon--blue {
+      background: var(--primary-light);
+    }
+
+    .feature-card__icon--green {
+      background: var(--accent-light);
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ===================== TESTIMONIALS ===================== */
+    .testimonials {
+      padding: 5rem 0;
+    }
+
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(10, 94, 176, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .testimonial-card__stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-card__quote {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      flex: 1;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .testimonial-card__avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), #dbeafe);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial-card__name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-card__city {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* ===================== FOOTER ===================== */
+    .footer {
+      background: linear-gradient(135deg, #0a3d6e, var(--primary));
+      color: rgba(255, 255, 255, 0.85);
+      padding: 4rem 0 0;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .footer__logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer__tagline {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 300px;
+    }
+
+    .footer__heading {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer__links a {
+      font-size: 0.9rem;
+      transition: color var(--transition);
+    }
+
+    .footer__links a:hover,
+    .footer__links a:focus-visible {
+      color: var(--white);
+    }
+
+    .footer__contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 1.25rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 1024px) {
+      .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar__menu,
+      .navbar__actions .btn--primary {
+        display: none;
+      }
+
+      .navbar__toggle {
+        display: flex;
+      }
+
+      .navbar__menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(16px);
+        padding: 1.25rem;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(10, 94, 176, 0.08);
+        box-shadow: var(--shadow-md);
+      }
+
+      .hero {
+        padding: 2rem 0 3.5rem;
+      }
+
+      .hero__grid {
+        flex-direction: column;
+      }
+
+      .hero__benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__ctas {
+        flex-direction: column;
+      }
+
+      .hero__ctas .btn {
+        width: 100%;
+      }
+
+      .stats__grid,
+      .why__grid,
+      .testimonials__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(1200px, 100% - 1.25rem);
+      }
+
+      .form-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo" aria-label="OrthoNow Home">
+        <span class="navbar__logo-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M2 12h20"/>
+          </svg>
+        </span>
+        ORTHONOW
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="navbar__menu" id="navMenu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#clinics">Clinics</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="#consultation-form" class="btn btn--primary">Book Consultation</a>
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" id="about" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <div class="hero__badge">
+              <span class="stars" aria-label="4.8 out of 5 stars">★★★★★ 4.8 Google Rating</span>
+              <span class="divider" aria-hidden="true">|</span>
+              <span>Trusted by 5,000+ Patients</span>
+            </div>
+
+            <h1 class="hero__title" id="hero-title">
+              Get Expert <span>Orthopaedic Care</span> Without Long Waiting Times
+            </h1>
+
+            <p class="hero__subtitle">
+              Book your consultation with experienced orthopaedic specialists across Bengaluru, Hyderabad and Chennai.
+            </p>
+
+            <ul class="hero__benefits">
+              <li><span class="check" aria-hidden="true">✔</span> Same-Day Consultation</li>
+              <li><span class="check" aria-hidden="true">✔</span> 25+ Experienced Specialists</li>
+              <li><span class="check" aria-hidden="true">✔</span> Personalized Treatment Plans</li>
+              <li><span class="check" aria-hidden="true">✔</span> Modern Diagnostic Facilities</li>
+            </ul>
+
+            <div class="hero__ctas">
+              <a href="#consultation-form" class="btn btn--primary">Book Free Consultation</a>
+              <a href="tel:+918888888888" class="btn btn--outline" id="callNowBtn" data-location="hero">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call Now
+              </a>
+              <a href="https://wa.me/918888888888" class="btn btn--whatsapp" id="whatsappBtn" data-location="hero" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.883 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+                WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- ===================== CONSULTATION FORM CARD ===================== -->
+          <div class="hero__form-wrapper" id="consultation-form">
+            <div class="form-card" id="formCard">
+              <div class="form-card__header">
+                <h2>Book Your Free Consultation</h2>
+                <p>Fill in your details and we'll reach out shortly.</p>
+              </div>
+
+              <form id="consultationForm" novalidate>
+                <div class="form-group">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" autocomplete="name" required>
+                  <span class="form-error" id="nameError">Please enter a valid name (at least 2 characters).</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="10-digit mobile number" autocomplete="tel" required>
+                  <span class="form-error" id="phoneError">Please enter a valid 10-digit Indian mobile number.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="clinicLocation">Preferred Clinic</label>
+                  <select id="clinicLocation" name="clinicLocation" required>
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                  </select>
+                  <span class="form-error" id="clinicError">Please select a preferred clinic location.</span>
+                </div>
+
+                <button type="submit" class="btn btn--primary form-card__submit">Book Free Consultation</button>
+
+                <div class="form-card__secure">
+                  <span aria-hidden="true">🔒</span>
+                  <span><strong>Your information is secure.</strong><br>We'll contact you within 30 minutes.</span>
+                </div>
+              </form>
+            </div>
+
+            <div class="success-card" id="successCard" role="status" aria-live="polite">
+              <div class="success-card__icon" aria-hidden="true">✓</div>
+              <h2>Thank You!</h2>
+              <p>Your consultation request has been received.</p>
+              <p>Our team will contact you within 30 minutes.</p>
+              <span class="booking-id" id="bookingId"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATISTICS SECTION ===================== -->
+    <section class="stats" id="clinics" aria-labelledby="stats-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Our Impact</span>
+          <h2 id="stats-title">Trusted Orthopaedic Care Across South India</h2>
+          <p>Delivering world-class musculoskeletal treatment with compassion and precision.</p>
+        </div>
+
+        <div class="stats__grid">
+          <article class="stat-card">
+            <div class="stat-card__number">5000+</div>
+            <div class="stat-card__label">Patients Treated</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-card__number">25+</div>
+            <div class="stat-card__label">Doctors</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-card__number">9</div>
+            <div class="stat-card__label">Clinics</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-card__number">15+</div>
+            <div class="stat-card__label">Years Experience</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY CHOOSE ORTHONOW ===================== -->
+    <section class="why" id="doctors" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Why Choose Us</span>
+          <h2 id="why-title">Comprehensive Orthopaedic Care, All Under One Roof</h2>
+          <p>From diagnosis to recovery — we support you at every step of your healing journey.</p>
+        </div>
+
+        <div class="why__grid">
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--blue" aria-hidden="true">👨‍⚕️</div>
+            <h3>Expert Specialists</h3>
+            <p>Board-certified orthopaedic surgeons with decades of combined experience in joint, spine and sports injuries.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--green" aria-hidden="true">📷</div>
+            <h3>Digital X-Ray</h3>
+            <p>High-resolution digital imaging for faster, more accurate diagnosis with minimal radiation exposure.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--blue" aria-hidden="true">🏃</div>
+            <h3>Physiotherapy</h3>
+            <p>In-house physiotherapy teams for post-surgery rehabilitation and non-surgical recovery programmes.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--green" aria-hidden="true">🛡️</div>
+            <h3>Insurance Support</h3>
+            <p>Dedicated insurance desk to assist with cashless claims and documentation across major providers.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--blue" aria-hidden="true">🏥</div>
+            <h3>Modern Clinics</h3>
+            <p>State-of-the-art facilities across 9 locations in Bengaluru, Hyderabad and Chennai.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--green" aria-hidden="true">💊</div>
+            <h3>Personalized Treatment</h3>
+            <p>Custom treatment plans tailored to your condition, lifestyle and recovery goals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Patient Stories</span>
+          <h2 id="testimonials-title">What Our Patients Say</h2>
+          <p>Real experiences from people who trusted OrthoNow with their care.</p>
+        </div>
+
+        <div class="testimonials__grid">
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">"I had severe knee pain for months. OrthoNow got me a same-day appointment and the doctor explained everything clearly. Back to walking pain-free in 6 weeks!"</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">R</div>
+              <div>
+                <div class="testimonial-card__name">Rajesh Kumar</div>
+                <div class="testimonial-card__city">Bengaluru</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">"The physiotherapy team was incredible after my shoulder surgery. Modern clinic, friendly staff, and seamless insurance processing. Highly recommend OrthoNow."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">P</div>
+              <div>
+                <div class="testimonial-card__name">Priya Sharma</div>
+                <div class="testimonial-card__city">Hyderabad</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">"Booked through WhatsApp and got a callback within 20 minutes. The spine specialist diagnosed my issue accurately. Professional care from start to finish."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">A</div>
+              <div>
+                <div class="testimonial-card__name">Arun Menon</div>
+                <div class="testimonial-card__city">Chennai</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contact" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">ORTHONOW</div>
+          <p class="footer__tagline">Expert orthopaedic care across Bengaluru, Hyderabad and Chennai. Same-day consultations, modern diagnostics and personalized treatment plans.</p>
+        </div>
+
+        <div>
+          <h3 class="footer__heading">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#clinics">Our Clinics</a></li>
+            <li><a href="#doctors">Our Doctors</a></li>
+            <li><a href="#consultation-form">Book Consultation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__heading">Contact</h3>
+          <div class="footer__contact-item">
+            <span aria-hidden="true">📞</span>
+            <span>+91 88888 88888</span>
+          </div>
+          <div class="footer__contact-item">
+            <span aria-hidden="true">✉️</span>
+            <span>care@orthonow.in</span>
+          </div>
+          <div class="footer__contact-item">
+            <span aria-hidden="true">📍</span>
+            <span>Bengaluru · Hyderabad · Chennai</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 OrthoNow Healthcare. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    (function () {
+      var form = document.getElementById("consultationForm");
+      var formCard = document.getElementById("formCard");
+      var successCard = document.getElementById("successCard");
+      var bookingIdEl = document.getElementById("bookingId");
+
+      var nameInput = document.getElementById("fullName");
+      var phoneInput = document.getElementById("phoneNumber");
+      var clinicSelect = document.getElementById("clinicLocation");
+
+      var nameError = document.getElementById("nameError");
+      var phoneError = document.getElementById("phoneError");
+      var clinicError = document.getElementById("clinicError");
+
+      function pushEvent(payload) {
+        window.dataLayer.push(payload);
+        console.log("dataLayer event:", payload);
+      }
+
+      function validateName(value) {
+        return value.trim().length >= 2 && /^[a-zA-Z\s.'-]+$/.test(value.trim());
+      }
+
+      function validatePhone(value) {
+        var digits = value.replace(/\D/g, "");
+        if (digits.length === 12 && digits.indexOf("91") === 0) {
+          digits = digits.slice(2);
+        }
+        return /^[6-9]\d{9}$/.test(digits);
+      }
+
+      function validateClinic(value) {
+        return ["Bengaluru", "Hyderabad", "Chennai"].indexOf(value) !== -1;
+      }
+
+      function setFieldError(input, errorEl, hasError) {
+        if (hasError) {
+          input.classList.add("error");
+          errorEl.classList.add("visible");
+        } else {
+          input.classList.remove("error");
+          errorEl.classList.remove("visible");
+        }
+      }
+
+      function generateBookingId() {
+        var num = Math.floor(10000 + Math.random() * 90000);
+        return "ORTHO-" + num;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var name = nameInput.value.trim();
+        var phone = phoneInput.value.trim();
+        var clinic = clinicSelect.value;
+
+        var isNameValid = validateName(name);
+        var isPhoneValid = validatePhone(phone);
+        var isClinicValid = validateClinic(clinic);
+
+        setFieldError(nameInput, nameError, !isNameValid);
+        setFieldError(phoneInput, phoneError, !isPhoneValid);
+        setFieldError(clinicSelect, clinicError, !isClinicValid);
+
+        if (!isNameValid || !isPhoneValid || !isClinicValid) {
+          return;
+        }
+
+        pushEvent({
+          event: "consultation_form_submitted",
+          patient_name: name,
+          phone_number: phone,
+          clinic_location: clinic
+        });
+
+        formCard.style.display = "none";
+        successCard.classList.add("visible");
+        bookingIdEl.textContent = generateBookingId();
+      });
+
+      document.getElementById("callNowBtn").addEventListener("click", function () {
+        pushEvent({
+          event: "call_now_click",
+          button_location: "hero"
+        });
+      });
+
+      document.getElementById("whatsappBtn").addEventListener("click", function () {
+        pushEvent({
+          event: "whatsapp_click",
+          button_location: "hero"
+        });
+      });
+
+      var navToggle = document.getElementById("navToggle");
+      var navMenu = document.getElementById("navMenu");
+
+      navToggle.addEventListener("click", function () {
+        var isOpen = navMenu.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", isOpen);
+      });
+
+      navMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          navMenu.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
