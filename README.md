@@ -145,7 +145,7 @@ The deployed landing page achieved excellent PageSpeed scores.
 Live Demo
 
 ```
-https://YOUR-VERCEL-URL.vercel.app
+(https://namoza-developer-assignment-delta.vercel.app/)
 ```
 
 Replace the above URL with your deployed Vercel URL.
